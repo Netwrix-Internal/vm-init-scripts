@@ -23,6 +23,14 @@ sudo apt install docker-ce -y
 sudo usermod -aG docker $USER
 ### END INSTALL DOCKER ###
 
+### START INSTALL DOCKER COMPOSE ###
+# Download latest version of Docker Compose
+sudo curl -L https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+# Make it executable
+sudo chmod +x /usr/local/bin/docker-compose
+### END INSTALL DOCKER COMPOSE ###
+
 ### PROMPT FOR REBOOT ###
 read -p "Docker installation complete. Would you like to reboot now? (y/n): " REBOOT_RESPONSE
 if [[ "$REBOOT_RESPONSE" =~ ^[Yy]$ ]]; then
